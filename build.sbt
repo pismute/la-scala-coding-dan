@@ -1,4 +1,4 @@
-name := "project-euler"
+name := "la-scala-coding-dan"
 
 version := "1.0-SNAPSHOT"
 
