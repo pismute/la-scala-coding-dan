@@ -6,7 +6,7 @@ import scala.annotation.tailrec
 object Euler {
   def isPrime(n:Long) : Boolean = {
     require( n > 0 , "Negative number")
-    
+
     n match {
       case 0 | 1 => false
       case 2 => true
@@ -15,10 +15,10 @@ object Euler {
         ! (3L to math.sqrt(n).toLong ).exists(n % _ == 0)
     }
   }
-  
+
   def getSmallestPrime(n:Long):Long = {
     require( n > 0 , "Negative number")
-    
+
     n match {
       case 0L | 1L => 0L
       case 2L => 2L
@@ -30,17 +30,17 @@ object Euler {
         }
     }
   }
-  
+
   @tailrec
   def getLargestPrime(n:Long):Long = Euler.getSmallestPrime(n) match{
     case 0 => n
-    case p if p >= n => n 
+    case p if p >= n => n
     case p => getLargestPrime( n / p )
   }
-  
+
   /**
    * ## long range
-   * 
+   *
    * - [Iterator](https://blogs.warwick.ac.uk/chrismay/entry/long_ranges_in)
    * - [Stream](https://gist.github.com/daclouds/67b184fdb1b1a36bd181)
    * - Recursion
@@ -51,14 +51,14 @@ object Euler {
     case (p, _) if Euler.isPrime(p) => nthPrime(nth:Long, i+1, count+1)
     case _ => nthPrime(nth, i+1, count)
   }
-    
+
   @tailrec
   def gcd(l:Long, r:Long):Long = r match {
     case 0 => l
     case _ => gcd(r, l % r)
-  } 
-  
-  def lcm(l:Long, r:Long):Long = l / gcd(l, r) * r 
-  
+  }
+
+  def lcm(l:Long, r:Long):Long = l / gcd(l, r) * r
+
   def isPalindrome(n:String):Boolean = n.reverse.equals( n )
 }

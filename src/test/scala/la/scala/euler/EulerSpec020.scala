@@ -37,7 +37,7 @@ class EulerSpec020 extends FlatSpec with ShouldMatchers{
       Array(20,73,35,29,78,31,90,01,74,31,49,71,48,86,81,16,23,57,05,54),
       Array(01,70,54,71,83,51,54,69,16,92,33,48,61,43,52,01,89,19,67,48)
     )
-    
+
     /*
      * Vector(
      *  List(51, 23, 31, 49, 8),
@@ -50,7 +50,7 @@ class EulerSpec020 extends FlatSpec with ShouldMatchers{
       case _ if i >= Square.length || j >= Square.length || i < 0 || j < 0 => acc
       case _ => diagonal(i + 1, j + 1, Square(i)(j) :: acc)
     }
-    
+
     /*
      * Vector(
      *  List(52, 49, 99, 97),
@@ -63,14 +63,14 @@ class EulerSpec020 extends FlatSpec with ShouldMatchers{
       case _ if i >= Square.length || j >= Square.length || i < 0 || j < 0 => acc
       case _ => diagonalBack(i + 1, j - 1, Square(i)(j) :: acc)
     }
-    
+
     val lines = (0 until Square.length).map( Square(_).toList ) ++ //Horizontal
         (0 until Square.length).map( i => (0 until Square.length).map( Square(_)(i) ).toList ) ++ //vertical
         (0 until Square.length).map( diagonal(0, _) ) ++ //diagonal(\\)
         (1 until Square.length).map( diagonal(_, 0) ) ++ //diagonal(\\)
         (0 until Square.length).map( diagonalBack(0, _) ) ++ //diagonal(//)
         (1 until Square.length).map( diagonalBack(_, Square.length-1) ) //diagonal(//)
-    
+
     @tailrec
     def getMax(list:List[Int], max:Int = 0):Int = list match {
       case a :: b :: c :: d :: tail => a * b * c * d match {
@@ -79,21 +79,21 @@ class EulerSpec020 extends FlatSpec with ShouldMatchers{
       }
       case _ => max
     }
-    
+
     lines
       .foldRight( 0 )( getMax(_, _) ) should be (70600674)
   }
-  
+
   "euler012" should "be 76576500" in {
     lazy val triangleNumbers =
       Stream.from(1)
         .map(n=> n*(n+1)/2)
-  
+
     /*
     def countFactors(t: Int) = Range(1, Int.MaxValue)
       .takeWhile(n => n * n <= t) //??
       foldLeft(0)((s, n) => if(t % n == 0) s + 2 else s) //??
-    
+
     triangleNumbers.find(countFactors(_) > 500).get should be (76576500)
     */
   }
