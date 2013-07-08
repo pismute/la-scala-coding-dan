@@ -42,3 +42,18 @@ project/plugins/project/
 # ignore worksheet
 .worksheet/
 *.sc
+
+# emacs
+*~
+\#*\#
+/.emacs.desktop
+/.emacs.desktop.lock
+.elc
+auto-save-list
+tramp
+.\#*
+
+# emacs.ensime
+
+.ensime
+.ensime_lucene/
