@@ -5,8 +5,8 @@ import org.scalatest.matchers.ShouldMatchers
 import scala.annotation.tailrec
 import util.control.Breaks._
 
-class EulerSpec020 extends FlatSpec with ShouldMatchers{
-  "euler011" should "be 70600674" in {
+class EulerSpec011 extends FlatSpec with ShouldMatchers{
+  it should "be 70600674" in {
     val Square: Array[Array[Int]] = Array(
   /*
       Array( 8,02,22,97,38),
@@ -83,18 +83,5 @@ class EulerSpec020 extends FlatSpec with ShouldMatchers{
     lines
       .foldRight( 0 )( getMax(_, _) ) should be (70600674)
   }
-
-  "euler012" should "be 76576500" in {
-    lazy val triangleNumbers =
-      Stream.from(1)
-        .map(n=> n*(n+1)/2)
-
-    /*
-    def countFactors(t: Int) = Range(1, Int.MaxValue)
-      .takeWhile(n => n * n <= t) //??
-      foldLeft(0)((s, n) => if(t % n == 0) s + 2 else s) //??
-
-    triangleNumbers.find(countFactors(_) > 500).get should be (76576500)
-    */
-  }
 }
+
