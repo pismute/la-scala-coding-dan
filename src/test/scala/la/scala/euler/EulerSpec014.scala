@@ -6,8 +6,8 @@ import scala.annotation.tailrec
 import util.control.Breaks._
 import scala.collection.mutable
  
-class EulerSpec014 extends FlatSpec with ShouldMatchers{
-  ignore should "be 837799" in {
+class EulerSpec014 extends FunSpec with ShouldMatchers{
+  ignore("should be 837799") {
     @tailrec
     def collatz(n:BigInt, chain:Long = 1L):Long = n match {
       case _ if n == 1 => chain
@@ -24,7 +24,7 @@ class EulerSpec014 extends FlatSpec with ShouldMatchers{
   }
 
   //Heuristic
-  ignore should "be 837799 in heuristic" in {
+  ignore("should be 837799 in heuristic") {
     val vals:mutable.Map[BigInt, Long] = mutable.Map.empty
 
     @tailrec    
@@ -50,7 +50,7 @@ class EulerSpec014 extends FlatSpec with ShouldMatchers{
 
   // Memoization
   // from http://michid.wordpress.com/2009/02/23/function_mem/ 
-  ignore should "be 837799, accessible recursive from outside" in {
+  ignore("should be 837799, accessible recursive from outside") {
     def collatzRec(n:BigInt, chain:Long, f: (BigInt, Long)=>Long):Long  = n match{
       case _ if n == 1 => chain
       case _ if n % 2 == 0 => f(n/2, chain + 1)
@@ -70,7 +70,7 @@ class EulerSpec014 extends FlatSpec with ShouldMatchers{
 
   // Memoization
   // from http://michid.wordpress.com/2009/02/23/function_mem/ 
-  it should "be 837799 in memoization" in {
+  it("should be 837799 in memoization") {
     class Memoize1[-K, -A, +R](f: (K, A) => R) extends ( (K, A) => R) {
       import scala.collection.mutable
       private[this] val vals = mutable.Map.empty[K, R]

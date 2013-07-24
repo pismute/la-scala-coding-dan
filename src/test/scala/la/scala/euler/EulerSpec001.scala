@@ -5,8 +5,8 @@ import org.scalatest.matchers.ShouldMatchers
 import scala.annotation.tailrec
 import util.control.Breaks._
 
-class EulerSpec001 extends FlatSpec with ShouldMatchers{
-  it should "be 233168" in {
+class EulerSpec001 extends FunSpec with ShouldMatchers{
+  it("should be 233168") {
     @tailrec
     def euler001(i:Int, accu:Int = 0):Int = i match{
       case 1000 => accu

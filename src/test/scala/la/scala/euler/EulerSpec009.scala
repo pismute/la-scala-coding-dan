@@ -5,8 +5,8 @@ import org.scalatest.matchers.ShouldMatchers
 import scala.annotation.tailrec
 import util.control.Breaks._
 
-class EulerSpec009 extends FlatSpec with ShouldMatchers{
-  it should "be 31875000" in {
+class EulerSpec009 extends FunSpec with ShouldMatchers{
+  it("should be 31875000") {
     @tailrec
     def euler0091(a:Long, b:Long):Long = (a, b, 1000L-a-b) match {
       case (a, b, c) if c > b && a * a + b * b == c * c => a*b*c

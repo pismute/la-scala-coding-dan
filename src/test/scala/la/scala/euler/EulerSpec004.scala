@@ -5,8 +5,8 @@ import org.scalatest.matchers.ShouldMatchers
 import scala.annotation.tailrec
 import util.control.Breaks._
 
-class EulerSpec004 extends FlatSpec with ShouldMatchers{
-  it should "be 906609" in {
+class EulerSpec004 extends FunSpec with ShouldMatchers{
+  it("should be 906609") {
     (for {
       i <- 100 until 1000
       j <- 100 until 1000

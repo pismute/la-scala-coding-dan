@@ -5,8 +5,8 @@ import org.scalatest.matchers.ShouldMatchers
 import scala.annotation.tailrec
 import util.control.Breaks._
 
-class EulerSpec011 extends FlatSpec with ShouldMatchers{
-  it should "be 70600674" in {
+class EulerSpec011 extends FunSpec with ShouldMatchers{
+  it("should be 70600674") {
     val Square: Array[Array[Int]] = Array(
   /*
       Array( 8,02,22,97,38),

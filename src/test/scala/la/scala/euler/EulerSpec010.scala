@@ -5,8 +5,8 @@ import org.scalatest.matchers.ShouldMatchers
 import scala.annotation.tailrec
 import util.control.Breaks._
 
-class EulerSpec010 extends FlatSpec with ShouldMatchers{
-  it should "be 142913828922" in {
+class EulerSpec010 extends FunSpec with ShouldMatchers{
+  it("should be 142913828922") {
     (1L to 2000000L)
       .filter( Euler.isPrime )
       .sum should be (142913828922L)

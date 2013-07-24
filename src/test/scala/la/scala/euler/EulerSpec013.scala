@@ -5,8 +5,8 @@ import org.scalatest.matchers.ShouldMatchers
 import scala.annotation.tailrec
 import util.control.Breaks._
 
-class EulerSpec013 extends FlatSpec with ShouldMatchers{
-  it should "be 5537376230" in {
+class EulerSpec013 extends FunSpec with ShouldMatchers{
+  it("should be 5537376230") {
     val numbers = """
       37107287533902102798797998220837590246510135740250
       46376937677490009712648124896970078050417018260538
