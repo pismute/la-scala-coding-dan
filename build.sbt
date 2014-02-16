@@ -2,15 +2,28 @@ name := "la-scala-coding-dan"
 
 version := "1.0-SNAPSHOT"
 
-organization := "coding.la.scala"
+organization := "lascala"
 
-scalaVersion := "2.10.1"
+scalaVersion := "2.10.3"
 
-libraryDependencies += "org.scalatest" % "scalatest_2.10" % "1.9.1" % "test"
+//javacOptions ++= Seq("-source", "1.5")
 
-libraryDependencies += "junit" % "junit" % "4.10" % "test"
+libraryDependencies ++= Seq(
+  //"com.oracle" % "ojdbc6" % "11.2.0.3",
+  //"com.oracle" % "ojdbc5" % "11.2.0.2.0",
+  //"com.typesafe.slick" %% "slick" % "1.0.1",
+  "org.scalatest" %% "scalatest" % "1.9.1" % "test",
+  "junit" % "junit" % "4.10" % "test"
+)
 
 EclipseKeys.withSource := true
 
 testOptions in Test += Tests.Argument("-oD")
+
+// for fork
+javaOptions in run += "-Xmx64M"
+
+connectInput in run := true
+
+fork in run := true
 
