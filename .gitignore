@@ -57,3 +57,8 @@ tramp
 
 .ensime
 .ensime_lucene/
+
+#intellij
+/.history
+/.idea/
+/*.iml
