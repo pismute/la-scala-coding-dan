@@ -60,5 +60,9 @@ tramp
 
 #intellij
 /.history
-/.idea/
+/.idea*
 /*.iml
+
+# for codejam outout & resource
+/src/test/resources/**/*.in
+/codejam.out
