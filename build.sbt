@@ -28,5 +28,5 @@ testOptions in Test += Tests.Argument("-oD")
 
 connectInput in run := true
 
-fork in run := true
+//fork in run := true
 

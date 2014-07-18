@@ -34,6 +34,7 @@ lib_managed/
 src_managed/
 project/boot/
 project/plugins/project/
+project/
 
 # Scala-IDE specific
 .scala_dependencies
@@ -66,3 +67,5 @@ tramp
 # for codejam outout & resource
 /src/test/resources/**/*.in
 /codejam.out
+/*.in
+/*.out
