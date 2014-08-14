@@ -57,6 +57,7 @@ tramp
 # emacs.ensime
 
 .ensime
+.ensime_cache/
 .ensime_lucene/
 
 #intellij
